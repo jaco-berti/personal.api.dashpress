@@ -1,2 +1,2 @@
-# personal.api.dashpress
-Personal API for dashpress service.
+# personal.dashpress
+Personal dashpress service.
