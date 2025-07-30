@@ -1,0 +1,23 @@
+.link {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: rgb(168, 168, 168);
+    border: 2px solid transparent;
+    font-size: 14px;
+    row-gap: 10px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: white;
+}
+
+.active {
+    border-left: 2px solid white;
+    transition: all 0.3s ease;
+}

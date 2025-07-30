@@ -1,0 +1,11 @@
+.sidebar {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #232125;
+}
+
+.sidebar-inner {
+    width: 100% ;
+    background-color: #0f0f11ec;
+}
