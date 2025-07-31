@@ -1,0 +1,13 @@
+<section>
+    <app-text text="Select the data order type." />
+    <div class="dropdown">
+        <button data-toggle="dropdown" appBtnOutline>
+            {{ order() }}
+        </button>
+        <div class="dropdown-menu">
+            @for (type of types; track $index) {
+                <a [routerLink]="['./']" [queryParams]="{order: type}" class="dropdown-item">{{ type }}</a>
+            }
+        </div>
+    </div>
+</section>

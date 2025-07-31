@@ -1,0 +1,48 @@
+:host {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, #f4bcbc, #FCBFE8, #dab3ff);
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 1.25em;
+    cursor: pointer;
+}
+
+span {
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+:host::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #0F0F11;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+
+:host:hover::before {
+    opacity: 0.8;
+}
+
+:host:hover {
+    background: linear-gradient(45deg, #dab3ff, #FCBFE8, #f4bcbc);
+}
+
+:host::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    border-radius: 4px;
+    transition: 0.5s;
+    opacity: 0;
+    filter: blur(20px);
+}
+
+:host:hover:after {
+    opacity: 1;
+}

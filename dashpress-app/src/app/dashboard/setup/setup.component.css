@@ -1,0 +1,10 @@
+.setup {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+hr {
+    margin: 10px;
+    border-color: #232125;
+}
