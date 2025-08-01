@@ -1,12 +1,11 @@
-import { Component, DestroyRef, ElementRef, inject, viewChild } from '@angular/core';
-import { ButtonOutlineComponent } from '../../ui/buttons/button-outline/button-outline.component';
-import { TextComponent } from "../../ui/texts/text/text.component";
+import { Component, ElementRef, viewChild } from '@angular/core';
 import { SelectFileComponent } from "./select-file/select-file.component";
 import { OrderTypeComponent } from "./order-type/order-type.component";
+import { RequestComponent } from "./request/request.component";
 
 @Component({
   selector: 'app-setup',
-  imports: [SelectFileComponent, OrderTypeComponent],
+  imports: [SelectFileComponent, OrderTypeComponent, RequestComponent],
   templateUrl: './setup.component.html',
   styleUrl: './setup.component.css'
 })

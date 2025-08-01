@@ -1,6 +1,7 @@
 :host {
     position: relative;
     text-decoration: none;
+    min-width: 120px;
     color: #fff;
     background: linear-gradient(45deg, #f4bcbc, #FCBFE8, #dab3ff);
     padding: 8px 18px;

@@ -1,0 +1,10 @@
+<div class="dropdown">
+    <button data-toggle="dropdown" appBtnOutline>
+        {{ text() }}
+    </button>
+    <div class="dropdown-menu">
+        @for (item of items(); track $index) {
+            <a (click)="onSelectItem(item)" class="dropdown-item">{{ item }}</a>
+        }
+    </div>
+</div>
