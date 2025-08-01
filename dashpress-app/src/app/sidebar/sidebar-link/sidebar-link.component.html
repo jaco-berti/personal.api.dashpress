@@ -1,0 +1,8 @@
+<div [routerLink]="[routerLink()]" routerLinkActive="active" class="link">
+    <span appTextLink [changeFont]="false">
+        <span class="material-symbols-outlined">
+            {{ link().iconName }}
+        </span>
+        <p>{{ link().title }}</p>
+    </span>
+</div>

@@ -1,0 +1,11 @@
+:host {
+    text-decoration: none;
+    color: #A39FA9 !important;
+    cursor: default;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+:host:hover {
+    color: white !important;
+}

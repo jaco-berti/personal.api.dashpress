@@ -1,6 +1,5 @@
 import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { TextComponent } from "../../../ui/texts/text/text.component";
-import { ButtonOutlineComponent } from '../../../ui/buttons/button-outline/button-outline.component';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { orderTypes, types as typesList } from './order-type.model';
 import { DropdownComponent } from "../../../ui/buttons/dropdown/dropdown.component";

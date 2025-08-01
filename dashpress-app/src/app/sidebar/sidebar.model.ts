@@ -1,6 +1,6 @@
-import { Link } from "./sidebar/link/link.model";
+import { SidebarLink } from "./sidebar-link/sidebar-link.model";
 
-export const sidebarLinks: Link[] = [
+export const sidebarLinks: SidebarLink[] = [
     {
         title: 'Dashboard',
         iconName: 'dashboard',

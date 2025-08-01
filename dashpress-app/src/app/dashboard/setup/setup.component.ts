@@ -1,17 +1,20 @@
-import { Component, ElementRef, viewChild } from '@angular/core';
+import { Component, ElementRef, inject, input, viewChild } from '@angular/core';
 import { SelectFileComponent } from "./select-file/select-file.component";
 import { OrderTypeComponent } from "./order-type/order-type.component";
 import { RequestComponent } from "./request/request.component";
+import { TextLinkComponent } from '../../ui/texts/text-link/text-link.component';
+import { DashboardService } from '../dashboard.service';
 
 @Component({
   selector: 'app-setup',
-  imports: [SelectFileComponent, OrderTypeComponent, RequestComponent],
+  imports: [SelectFileComponent, OrderTypeComponent, RequestComponent,TextLinkComponent],
   templateUrl: './setup.component.html',
   styleUrl: './setup.component.css'
 })
 export class SetupComponent {
-  private fileData?: unknown;
   private inputFile = viewChild<ElementRef<HTMLInputElement>>('inputFile');
+  private dashboardService = inject(DashboardService);
+  areDataEmpty = input<boolean>();
 
   ngOnInit() {
     this.inputFile()?.nativeElement.addEventListener('change', () => {
@@ -21,8 +24,9 @@ export class SetupComponent {
         const reader = new FileReader();
         reader.onload = (e) => {
           try {
-            this.fileData = JSON.parse(e.target?.result as string);
-            console.log(this.fileData);
+            this.dashboardService.data.set(
+              JSON.parse(e.target?.result as string)
+            );
           } catch (err) {
             alert('Error parsing JSON file.');
           }

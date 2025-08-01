@@ -1,4 +1,4 @@
 <section>
     <app-text text="Select the data order type." />
-    <app-dropdown [routerLink]="['./']" [queryParams]="{order}" [items]="types()" [(text)]="order"/>
+    <app-dropdown routerLink="./" [queryParams]="{order}" [items]="types()" [(text)]="order"/>
 </section>

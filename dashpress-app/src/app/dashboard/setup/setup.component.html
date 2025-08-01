@@ -5,4 +5,7 @@
     <hr>
     <app-request />
     <hr>
+    @if (areDataEmpty()) {
+        <a appTextLink>There's no data loaded yet</a>
+    }
 </div>

@@ -1,3 +1,7 @@
+p {
+    margin: 0;
+}
+
 .link {
     position: relative;
     min-height: 100px;
@@ -6,8 +10,6 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    color: rgb(168, 168, 168);
-    font-size: 14px;
     row-gap: 10px;
     cursor: pointer;
     transition: all 0.4s ease;
