@@ -1,6 +1,6 @@
-export type orderTypes = 'matrix' | 'object-list' | 'list-objects';
+export type OrderTypeModel = 'matrix' | 'object-list' | 'list-objects';
 
-export const types: orderTypes[] = [
+export const types: OrderTypeModel[] = [
     'list-objects',
     'matrix',
     'object-list'

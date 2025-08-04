@@ -1,7 +1,7 @@
 import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { TextComponent } from "../../../ui/texts/text/text.component";
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { orderTypes, types as typesList } from './order-type.model';
+import { OrderTypeModel, types as typesList } from './order-type.model';
 import { DropdownComponent } from "../../../ui/buttons/dropdown/dropdown.component";
 
 @Component({
@@ -11,8 +11,8 @@ import { DropdownComponent } from "../../../ui/buttons/dropdown/dropdown.compone
   styleUrl: './order-type.component.css'
 })
 export class OrderTypeComponent {
-  types = signal<orderTypes[]>(typesList);
-  order: orderTypes = 'list-objects';
+  types = signal<OrderTypeModel[]>(typesList);
+  order: OrderTypeModel = 'list-objects';
   
   private activatedRoute = inject(ActivatedRoute);
   private destroyRef = inject(DestroyRef);

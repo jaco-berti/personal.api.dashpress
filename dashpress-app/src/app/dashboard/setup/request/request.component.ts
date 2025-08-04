@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   selector: 'app-request',
   imports: [TextComponent, InputOutlineComponent, ButtonOutlineComponent, RouterLink],
   templateUrl: './request.component.html',
-  styleUrl: './request.component.css'
+  styleUrl: './request.component.css',
 })
 export class RequestComponent {
 
