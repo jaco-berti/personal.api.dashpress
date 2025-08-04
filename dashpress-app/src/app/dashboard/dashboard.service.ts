@@ -1,10 +1,11 @@
 import { Injectable, signal } from "@angular/core";
+import { AcceptedDataModel } from "../app.model";
 
 @Injectable({
     providedIn: 'root'
 })
 export class DashboardService {
-    public data = signal<{} | any[]>({});
+    public data = signal<AcceptedDataModel>({});
 
     areDataEmpty() {
         let count = 0;

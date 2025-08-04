@@ -1,3 +1,4 @@
+import { AcceptedDataModel } from '../app.model';
 import { OrderTypeModel } from './../dashboard/setup/order-type/order-type.model';
 import { Injectable, signal } from "@angular/core";
 
@@ -6,5 +7,5 @@ import { Injectable, signal } from "@angular/core";
 })
 export class TableService {
     type = signal<OrderTypeModel>('list-objects');
-    obj = signal<{} | any[]>({});
+    obj = signal<AcceptedDataModel>({});
 }

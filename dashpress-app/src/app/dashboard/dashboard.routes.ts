@@ -6,6 +6,6 @@ export const dashboardRoutes: Routes = [
     { path: 'setup', component: SetupComponent },
     {
         path: 'table',
-        loadComponent: () => import('./dashboard-table/dashboard-table.component').then(m => m.DashboardTableComponent)
+        loadComponent: () => import('../table/table.component').then(m => m.TableComponent)
     }
 ]
