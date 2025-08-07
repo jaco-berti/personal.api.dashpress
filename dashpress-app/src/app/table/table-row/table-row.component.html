@@ -1,0 +1,25 @@
+<div
+(mouseleave)="iconsOpacity.set(0)"
+(mouseenter)="iconsOpacity.set(1)" 
+class="row table-row"
+[class.first]="isFirst()"
+[class.last]="isLast()"
+[class.secondary]="isSecondary()"
+>
+    @if (isFirst()) {
+    @for (value of data(); track $index) {
+    <p class="col" appTextLink>{{ value }}</p>
+    }
+    }
+    @else {
+    @for (value of data(); track $index) {
+    <app-text [text]="value" [margin]="false" class="col p" />
+    }
+    }
+
+    @if (!isFirst()) {
+        <span class="material-symbols-outlined delete-icon" [style.opacity]="iconsOpacity()">
+            delete
+        </span>
+    }
+</div>

@@ -1,1 +1,7 @@
-<p>table works!</p>
+<div class="container-fluid p-0 m-0 table">
+    <app-table-row [isFirst]="true" [data]="params()"/>
+
+    @for (row of arrays(); track $index) {
+        <app-table-row [isLast]="$last" [data]="row" />
+    }
+</div>

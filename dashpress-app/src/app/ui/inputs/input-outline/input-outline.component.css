@@ -3,7 +3,9 @@
     border: 1px solid #413E46;
     border-radius: 4px;
     color: gainsboro;
-    font-weight: 200;
+    font-size: 14px;
+    min-width: 250px;
+    font-weight: 300;
     transition: all 0.4s ease;
 }
 

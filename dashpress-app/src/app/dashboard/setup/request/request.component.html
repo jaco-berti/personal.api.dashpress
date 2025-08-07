@@ -1,7 +1,7 @@
 <section>
     <app-text text="GET request to your data" />
     <div class="row m-0 gap-4">
-        <input class="col-md-2" type="text" appInputOutline placeholder="Here your url">
-        <button routerLink="../table" class="col-md-1" appBtnOutline>Confirm</button>
+        <input class="col-md-2" type="text" appInputOutline placeholder="Here your url" [(ngModel)]="url">
+        <button (click)="onConfirm()" class="col-md-1" appBtn>Confirm</button>
     </div>
 </section>

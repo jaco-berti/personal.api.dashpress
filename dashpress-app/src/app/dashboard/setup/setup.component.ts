@@ -1,9 +1,11 @@
-import { Component, ElementRef, inject, input, viewChild } from '@angular/core';
+import { OrderTypeModel } from './order-type/order-type.model';
+import { Component, inject, signal } from '@angular/core';
 import { SelectFileComponent } from "./select-file/select-file.component";
 import { OrderTypeComponent } from "./order-type/order-type.component";
 import { RequestComponent } from "./request/request.component";
 import { TextLinkComponent } from '../../ui/texts/text-link/text-link.component';
-import { DashboardService } from '../dashboard.service';
+import { ActivatedRoute } from '@angular/router';
+import { SetupService } from './setup.service';
 
 @Component({
   selector: 'app-setup',
@@ -12,27 +14,14 @@ import { DashboardService } from '../dashboard.service';
   styleUrl: './setup.component.css'
 })
 export class SetupComponent {
-  private inputFile = viewChild<ElementRef<HTMLInputElement>>('inputFile');
-  private dashboardService = inject(DashboardService);
-  areDataEmpty = input<boolean>();
-
+  private setupService = inject(SetupService);
+  private route = inject(ActivatedRoute);
+  
   ngOnInit() {
-    this.inputFile()?.nativeElement.addEventListener('change', () => {
-      const file = this.inputFile()?.nativeElement.files![0];
-
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          try {
-            this.dashboardService.data.set(
-              JSON.parse(e.target?.result as string)
-            );
-          } catch (err) {
-            alert('Error parsing JSON file.');
-          }
-        };
-        reader.readAsText(file);
+    this.route.queryParams.subscribe({
+      next: (value) => {
+        this.setupService.type.set(value['order'])
       }
-    })
+    });
   }
 }

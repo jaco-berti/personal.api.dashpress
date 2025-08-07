@@ -1,20 +1,22 @@
-import { Component, inject, input } from '@angular/core';
-import { TableDataModel } from './table.model';
+import { Component, computed, input, signal } from '@angular/core';
 import { TableService } from './table.service';
+import { TableRowComponent } from "./table-row/table-row.component";
 
 @Component({
   selector: 'app-table',
-  imports: [],
+  imports: [TableRowComponent],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
 export class TableComponent { 
   readonly data = input<string>();
-  private tableService = inject(TableService);
+  private tableService = new TableService();
+
+  tableLength = computed(() => this.tableService.transformed.length);
+  params = computed(() => this.tableService.params);
+  arrays = computed(() => this.tableService.transformed);
 
   ngOnInit() {
-    const dataTemp: TableDataModel = JSON.parse(this.data() as string);
-    this.tableService.obj.set(dataTemp.obj);
-    this.tableService.type.set(dataTemp.type);
+    this.tableService.init(JSON.parse(this.data() as string));
   }
 }
